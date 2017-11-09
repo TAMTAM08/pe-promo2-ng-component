@@ -1,0 +1,8 @@
+<li ng-class="{done:$ctrl.task.done}">
+    <form ng-submit="edit($ctrl.task)">
+        <input type="checkbox" ng-click="markAsDone($ctrl.task)" ng-checked="$ctrl.task.done">
+        <span ng-dblclick="edit($ctrl.task)" ng-hide="$ctrl.task.hidden">{{$ctrl.task.label}}</span>
+        <input type="text" ng-show="$ctrl.task.hidden" ng-model="$ctrl.task.label">
+        <input type="button" value="x" ng-click="delete($ctrl.task)">
+    </form>
+</li>
