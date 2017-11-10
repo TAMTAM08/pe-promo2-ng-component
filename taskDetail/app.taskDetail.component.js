@@ -1,7 +1,7 @@
 angular
     .module("app")
     .component('taskDetail', {
-        templateUrl: './taskItem.html',
+        templateUrl: './taskDetail/app.taskDetail.html',
         bindings: {
             task: '='
         },
@@ -11,5 +11,9 @@ angular
             };
 
             $scope.markAsDone = produits.markAsDone;
+
+            $scope.delete = function (taskItem) {
+                produits.delete(taskItem);
+            };
         }]
     });
