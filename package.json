@@ -1,0 +1,29 @@
+{
+  "name": "ng-component",
+  "version": "1.0.0",
+  "description": "\"# pe-promo2-ng-component\"",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-eslint": "^20.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "serve": "^6.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "grunt && node ./node_modules/serve/bin/serve.js ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathRobin/pe-promo2-ng-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MathRobin/pe-promo2-ng-component/issues"
+  },
+  "homepage": "https://github.com/MathRobin/pe-promo2-ng-component#readme"
+}

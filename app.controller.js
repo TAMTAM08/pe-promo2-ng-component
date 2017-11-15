@@ -1,3 +1,5 @@
+/*globals angular */
+
 function tasksCtrl($scope, produits) {
     $scope.tasksList = produits.getAll();
 
@@ -16,8 +18,8 @@ function tasksCtrl($scope, produits) {
 }
 
 angular
-    .module("app")
-    .controller("tasksController", [
-        "$scope",
-        "produits",
+    .module('app')
+    .controller('tasksController', [
+        '$scope',
+        'produits',
         tasksCtrl]);
