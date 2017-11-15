@@ -47,3 +47,9 @@ Votre projet est disponible à l'adresse indiquée.
 La commande ```npm start``` permet d'exécuter le script situé dans package.json indiqué dans la propriété scripts.start.
 
 Ceci lance la tâche grunt puis le serveur local.
+
+### index.html
+
+J'utilise 3 scripts pour vous montrer 2 choses différentes :
+1. AngularJs et angularjs-ui-router chargés depuis une ressource extérieure
+2. assets/front.min.js, chargé à partir du fichier généré par le processus grunt.

@@ -1,4 +1,4 @@
 /*globals angular */
 
 angular
-    .module('app', []);
+    .module('app', ['ui.router']);

@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://npmcdn.com/@uirouter/angularjs@1.0.5/release/angular-ui-router.js"></script>
     <script src="./assets/front.min.js"></script>
     <style>
         .done {
             text-decoration: line-through;
         }
+        a.active {
+            color : yellowgreen;
+            font-weight: bold;
+        }
     </style>
 </head>
 
-<body ng-controller="tasksController">
-<form ng-submit="ajouter()">
-    <input type="text" ng-model="task">
-    <input type="button" ng-click="ajouter()" ng-disabled="!task.length" value="Ajouter" />
-    <input type="button" ng-click="selectAll()" value="Sélectionner tout">
-</form>
-<ul>
-    <task-detail ng-repeat="taskItem in tasksList" task="taskItem"></task-detail>
-</ul>
-{{countItemRestants()}}
+<body>
+<a ui-sref="add" ui-sref-active="active">Ajout</a>
+<a ui-sref="list" ui-sref-active="active">Liste</a>
+
+<ui-view></ui-view>
 </body>
 
 </html>

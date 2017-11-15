@@ -4,6 +4,7 @@
   "description": "\"# pe-promo2-ng-component\"",
   "main": "Gruntfile.js",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.11",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^3.1.0",

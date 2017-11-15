@@ -11,14 +11,18 @@ module.exports = function (grunt) {
             'front': {
                 'src': [
                     'app.js',
+                    'app.config.js',
                     'app.produits.service.js',
-                    'app.controller.js',
+                    'homePanel/app.homePanel.component.js',
+                    'taskAddPanel/app.taskAddPanel.component.js',
+                    'taskListPanel/app.taskListPanel.component.js',
                     'taskDetail/app.taskDetail.component.js'
                 ],
                 'dest': 'assets/front.js',
                 'nonull': 'true'
             }
         },
+
         uglify : {
             'front': {
                 'files': {
