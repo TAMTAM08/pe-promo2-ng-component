@@ -1,5 +1,7 @@
+/*globals angular */
+
 angular
-    .module("app")
+    .module('app')
     .component('taskAddPanel', {
         templateUrl: './taskAddPanel/app.taskAddPanel.html',
         controller : [

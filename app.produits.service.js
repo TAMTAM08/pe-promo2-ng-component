@@ -1,5 +1,9 @@
 /*eslint-disable */
 
+/**
+ * Code commenté pour montrer grunt-uglify
+ * Je l'ai remplacé par la version transpilé en ES 5 à partir de ligne 55 de ce fichier
+ */
 // class Produits {
 //     constructor() {
 //         this.list = [
@@ -48,109 +52,53 @@
 //     }
 // }
 
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-var Produits = function () {
+var Produits = (function () {
     function Produits() {
-        _classCallCheck(this, Produits);
-
-        this.list = [{ label: 'oeufs', done: false }, { label: 'lait', done: false }, { label: 'farine', done: false }];
+        this.list = [
+            { label: 'oeufs', done: false },
+            { label: 'lait', done: false },
+            { label: 'farine', done: false }
+        ];
     }
-
-    _createClass(Produits, [{
-        key: 'getAll',
-        value: function getAll() {
-            return this.list;
+    Produits.prototype.getAll = function () {
+        return this.list;
+    };
+    Produits.prototype.add = function (taskLabel) {
+        this.list.push({
+            label: taskLabel,
+            done: false
+        });
+    };
+    Produits.prototype.markAsDone = function (taskItem) {
+        taskItem.done = !taskItem.done;
+    };
+    Produits.prototype.selectAll = function () {
+        for (var _i = 0, _a = this.list; _i < _a.length; _i++) {
+            var taskItem = _a[_i];
+            taskItem.done = true;
         }
-    }, {
-        key: 'add',
-        value: function add(taskLabel) {
-            this.list.push({
-                label: taskLabel,
-                done: false
-            });
-        }
-    }, {
-        key: 'markAsDone',
-        value: function markAsDone(taskItem) {
-            taskItem.done = !taskItem.done;
-        }
-    }, {
-        key: 'selectAll',
-        value: function selectAll() {
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = this.list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var taskItem = _step.value;
-
-                    taskItem.done = true;
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
+    };
+    Produits.prototype.delete = function (taskItem) {
+        var position = this.list.indexOf(taskItem);
+        this.list.splice(position, 1);
+    };
+    Produits.prototype.countItemRestants = function () {
+        var compteur = 0;
+        for (var _i = 0, _a = this.list; _i < _a.length; _i++) {
+            var taskItem = _a[_i];
+            if (!taskItem.done) {
+                compteur++;
             }
         }
-    }, {
-        key: 'delete',
-        value: function _delete(taskItem) {
-            var position = this.list.indexOf(taskItem);
-            this.list.splice(position, 1);
-        }
-    }, {
-        key: 'countItemRestants',
-        value: function countItemRestants() {
-            var compteur = 0;
-
-            var _iteratorNormalCompletion2 = true;
-            var _didIteratorError2 = false;
-            var _iteratorError2 = undefined;
-
-            try {
-                for (var _iterator2 = this.list[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                    var taskItem = _step2.value;
-
-                    if (!taskItem.done) {
-                        compteur++;
-                    }
-                }
-            } catch (err) {
-                _didIteratorError2 = true;
-                _iteratorError2 = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                        _iterator2.return();
-                    }
-                } finally {
-                    if (_didIteratorError2) {
-                        throw _iteratorError2;
-                    }
-                }
-            }
-
-            return compteur;
-        }
-    }]);
-
+        return compteur;
+    };
     return Produits;
-}();
+}());
+/**
+ * Injection de dépendance vide ici
+ * Pour ajouter une dépendance à ce service, il suffit de l'ajouter à ce tableau et dans le constructeur du service
+ */
+Produits.$inject = [];
 
 angular
     .module('app')

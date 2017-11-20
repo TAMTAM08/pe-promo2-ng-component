@@ -1,5 +1,7 @@
+/*globals angular */
+
 angular
-    .module("app")
+    .module('app')
     .component('taskDetail', {
         templateUrl: './taskDetail/app.taskDetail.html',
         bindings: {

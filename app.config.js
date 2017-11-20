@@ -1,5 +1,10 @@
 /*globals angular */
 
+/**
+ * Configuration du module AngularJs
+ *
+ * C'est notammentici que nous déclarons les différents états (ou "écrans") de notre application
+ */
 angular
     .module('app')
     .config(['$stateProvider', function ($stateProvider) {
