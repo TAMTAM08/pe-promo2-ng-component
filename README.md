@@ -20,7 +20,7 @@ npm start
 Normalement, votre ligne de commande affichera quelque chose de similaire à ceci :
 
 ```shell
-  ┌───────────────────────────────────────────────────┐
+   ┌───────────────────────────────────────────────────┐
    │                                                   │
    │   Serving!                                        │
    │                                                   │
